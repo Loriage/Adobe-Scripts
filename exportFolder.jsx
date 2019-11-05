@@ -5,14 +5,15 @@ function main() {
 	if (!inputFolder)
 		return;
 	var fileList = inputFolder.getFiles("*.psd");
-	var doc_path = String(inputFolder).slice(0, -3);
+	var regex = new RegExp('/[^/]*$');
+	var doc_path = String(inputFolder).replace(regex, '/');
 
 	// Open and save all PSD files in ../720
 	for(var i=0; i<fileList.length; i++) {
 		if (fileList[i] instanceof File) {
 			open(fileList[i]);
 			var doc = app.activeDocument;
-			var sub_directory = new Folder( doc_path + '/720');
+			var sub_directory = new Folder( doc_path + '720');
 			if ( !sub_directory.exists ) sub_directory.create()
 			var new_path = sub_directory + '/' + doc.name.split('.')[0] + '.jpg';
 
@@ -22,7 +23,7 @@ function main() {
 	// Resize and save all PSD files in ../480
 	for(var i=fileList.length; i>0; i--) {
 		var doc = app.activeDocument;
-		var sub_directory = new Folder( doc_path + '/480');
+		var sub_directory = new Folder( doc_path + '480');
 		if ( !sub_directory.exists ) sub_directory.create()
 		var new_path = sub_directory + '/' + doc.name.split('.')[0] + '.jpg';
 
