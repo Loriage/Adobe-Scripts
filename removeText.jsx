@@ -10,9 +10,6 @@ function findLayersText (layers) {
         }
     }
 }
-
-//check all art layers then
-//check if there are any inner layer sets
 function browseLayerSets (sets) {
     for (var i = 0, len = sets.length; i < len; i++) {
         findLayersText(sets[i].artLayers);
