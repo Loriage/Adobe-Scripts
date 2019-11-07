@@ -4,7 +4,7 @@ function main() {
 	var inputFolder = Folder.selectDialog("Select a folder to process");
 	if (!inputFolder)
 		return;
-	var fileList = inputFolder.getFiles("*.psd");
+	var fileList = inputFolder.getFiles("*.ps*");
 	var regex = new RegExp('/[^/]*$');
 	var doc_path = String(inputFolder).replace(regex, '/');
 
