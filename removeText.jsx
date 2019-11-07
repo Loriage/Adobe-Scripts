@@ -5,7 +5,7 @@ function findLayersText (layers) {
     for (var i = 0, len = layers.length; i < len; i++) {
         if (layers[i].kind == "LayerKind.TEXT") {
             layers[i].remove();
-			i--;
+	    i--;
             len--;
         }
     }
