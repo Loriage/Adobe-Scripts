@@ -9,3 +9,4 @@ function reversePages() {
 	}
 	t.end();
 }
+reversePages();
