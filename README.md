@@ -1,2 +1,2 @@
-# Photoshop-Scripts
-Some handmade scripts for photoshop automation
+# Adobe-Scripts
+Some handmade scripts for Adobe automation
